@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title>Task_80+</title>
+</head>
+<body>
+    <p>1. </p><button onclick="print_it()">Print</button><br>
+    <p>2. </p><button onclick="search_area()">Search area</button>
+    <p>3. </p><button onclick="show_time()">Time</button> <br> <br>
+    <form>
+    4. Input year: <input id="year" /><br> <br>
+    <input type="button" onClick="leap_year()" Value="Leap year" />
+    </form>
+    <p>The Result is : <br>
+    <span id = "result"></span> <br>
+    <p>5. 
+    <span id = "resultfive"></span> <br>
+    
+    <p>6. </p><button onclick="spread()">Pop of file</button> <br> <br>
+    <p>7. 
+    <span id = "seven"></span> <br>
+    <button onclick="difference(2)">Difference with 13 </button>
+    <p>8. 
+    <span id = "eight"></span> <br>
+    <button onclick="differencesecond(6)">Difference with 19</button>
+    <p>9. 
+    <span id = "nine"></span> <br>
+    <button onclick="sumOr(6,6)">If the two values are same, then returns triple their sum.</button>
+    <p>10 . 
+    <span id = "ten"></span> <br>
+    <button onclick="testten(25,25)">If value is 50 or sum is 50 - true.</button>
+
+    <p>11 . 
+    <span id = "eleven"></span> <br>
+    <button onclick="testeleven(90)">Check a given integer is within 20 of 100 or 400.</button>
+    <p>12 . 
+    <span id = "twelfe"></span> <br>
+    <button onclick="pos_neg(4, 5)">Check from two given integers, if one is positive and one is negative.</button>
+    <p>13 . 
+    <span id = "thirdteen"></span> <br>
+    <button onclick="test_thirdteen()">String adding “Py”.</button>
+    <p>14 . 
+    <span id = "fourteen"></span> <br>
+    <button onclick="test_fourteen()">Remove a character at the specified position of a given string.</button>
+    <p>15 . 
+    <span id = "fifeteen"></span> <br>
+    <button onclick="is13([7, 8])">Check if an array of integers of length 2 does not contain 1 or a 3.</button>
+    <p>16 . 
+    <span id = "sixteen"></span> <br>
+    <button onclick="test_sixteen([20, 10])">Check test if a given array of integers contains 30 and 40 twice.</button>
+    <p>17 . 
+    <span id = "seventeen"></span> <br>
+    <button onclick="test_seventeen([1, 5])">Check if an array of integers of length 2 contains 1 or a 3.</button>
+    <p>18 . 
+    <span id = "eightteen"></span> <br>
+    <button onclick="test_eightteen([1, 6,8,5])">Create a new array taking the first and last elements.</button>
+    <p>19 . 
+    <span id = "nineteen"></span> <br>
+    <button onclick="test_nineteen([9, 0, 9], [0, 9, 0])">Create a new array taking the middle element of two arrays.</button>
+    <p>20 . 
+    <span id = "twenty"></span> <br>
+    <button onclick="test_twenty([ 0, 7 ,9 ,7 ])">Create a new array of the biggest elements of given array.</button>
+    <script>
+ 
+    function print_it()
+    {
+        window.print();
+    }
+    function search_area(){
+        var side1 = 5; 
+        var side2 = 6; 
+        var side3 = 7; 
+        var perimeter = (side1 + side2 + side3)/2;
+        var area =  Math.sqrt(perimeter*((perimeter-side1)*(perimeter-side2)*(perimeter-side3)));
+        document.write(area);
+    }
+    function show_time(){
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth()+1; 
+        var yyyy = today.getFullYear();
+        if(dd<=9) 
+        {
+            dd='0'+dd;
+        } 
+
+        if(mm<=9) 
+        {
+            mm='0'+mm;
+        } 
+        today = mm+'-'+dd+'-'+yyyy;
+        document.write(today+ "\n");
+        today = mm+'/'+dd+'/'+yyyy;
+        document.write(today+ "\n");
+        today = dd+'-'+mm+'-'+yyyy;
+        document.write(today+ "\n");
+        today = dd+'/'+mm+'/'+yyyy;
+        document.write(today);
+    }
+    function leap_year(){
+        year = document.getElementById("year").value;
+        result = (year % 100 === 0) ? (year % 400 === 0) : (year % 4 === 0);
+        document.getElementById("result").innerHTML = result;
+    }
+    var site= document.URL;
+    document.getElementById("resultfive").innerHTML = site;
+    function spread(){
+        filename = "laba.txt"
+        alert(filename.split('.').pop());
+    }
+    function difference(n)
+     {
+        var result = (n <= 13) ? (13 - n) : ((n - 13) * 2)
+        document.getElementById("seven").innerHTML = result; 
+     }
+    function differencesecond(n)
+     {
+        var result = (n <= 19) ? (19 - n) : ((n - 19) * 3)
+        document.getElementById("eight").innerHTML = result; 
+     }
+    function sumOr (x, y) {
+        var result = (x == y) ? 3 * (x + y) : (x + y)
+        document.getElementById("nine").innerHTML = result; 
+    }
+    function testten(x, y) 
+    {
+        var result=  ((x == 50 || y == 50) || (x + y == 50));
+        document.getElementById("ten").innerHTML = result; 
+    }
+    function testeleven(x) {
+       var result= ((Math.abs(100 - x) <= 20) || (Math.abs(400 - x) <= 20));
+       document.getElementById("eleven").innerHTML = result;  
+    }
+    function pos_neg(x, y)
+    {
+        var result = ((x < 0 && y > 0) || x > 0 && y < 0) ? "true" : "false"
+        document.getElementById("twelfe").innerHTML = result; 
+    }
+    function test_thirdteen() {
+        var str1="thon";
+        var result = (str1.substring(0, 2) == 'Py') ? (str1) : `Py${str1}`
+        document.getElementById("thirdteen").innerHTML = result; 
+    }
+    function test_fourteen() 
+     {
+        var str="Hello";
+        var char_pos = 3;
+        var result = str.substring(0, char_pos) + str.substring(char_pos + 1, str.length);
+        document.getElementById("fourteen").innerHTML = result; 
+     }
+    function is13(arr) {
+        var result = (arr.indexOf(1) == -1 && arr.indexOf(3) == -1) ? "true" : "false"
+        document.getElementById("fifeteen").innerHTML = result; 
+    }
+    function test_sixteen(arr) {
+        var result = ((arr[0] === arr[0] && arr[0] === arr[0]) || (arr[1] === 40 && arr[1] === 40))? "true" : "false";
+        document.getElementById("sixteen").innerHTML = result; 
+    }
+    function test_seventeen(arr) {
+        var result = (arr.indexOf(1) != -1 && arr.indexOf(3) != -1) ? "true" : "false"
+        document.getElementById("seventeen").innerHTML = result; 
+    }
+    function test_eightteen(arr) {
+         var arr2 = [];
+         arr2.push(arr[0], arr[arr.length - 1]);
+         document.getElementById("eightteen").innerHTML = arr2;
+    }
+    function test_nineteen(arr1, arr2) 
+    {
+        var arr = []
+        arr.push(arr1[1], arr2[1]);
+        document.getElementById("nineteen").innerHTML = arr;
+    }
+    function test_twenty(arr) 
+    {
+        for (i = 0; i < arr.length; i++){
+            if (arr[i] > arr[i + 1]) 
+                max = arr[i];
+        }
+        for (i = 0; i < arr.length; i++){ 
+                arr[i]=max;
+        }
+        document.getElementById("twenty").innerHTML = arr;
+    }
+    
+                
+
+        
+        
+    </script>
+</body>
+</html>
