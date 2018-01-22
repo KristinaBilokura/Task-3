@@ -1,0 +1,36 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Capitalize</title>
+</head>
+<body>
+  <script>
+     function truncate(str, maxlength) {
+        return (str.length > maxlength) ?
+        str.slice(0, maxlength - 3) + '...' : str;
+     }
+     alert( truncate("Hello, my friend!", 8) );
+      
+    var str="Назва Львів дана місту на честь князя Лева Даниловича, сина засновника Львова Данила Галицького.";
+      function search(str, lettersearch) {
+        for(var count=-1,index=-2; index != -1; count++,index=str.indexOf(lettersearch,index+1) );
+        return count;
+     }
+     alert(search(str, "а"));
+     function del(s1) {
+         var s2 = s1.replace(/xxxx/g,"");
+         s2 = s2.replace(/polityka/g,"");
+         return s2;
+     }
+     alert(del("Your password is 'polityka' -don'n tell it anuone 'xxxx' ."));
+      function numbersonly (){
+          var numbers = parseInt("іва 24 уц ац34434ауку".replace(/\D+/g,""));
+          alert("Numbers-"+numbers);
+      }
+      numbersonly();
+    
+  </script>
+</body>
+</html>

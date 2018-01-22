@@ -1,0 +1,38 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Array methods</title>
+</head>
+<body>
+<p>Array:<span id="array"></span> </p>
+<p>Answer (double): <span id="solution"></span></p>
+ <p>Odd numbers: <span id="odd"></span></p>
+ <p>Arithmetic mean: <span id="arithmetic_mean"></span></p>
+ 
+  <script>
+        var sol = document.getElementById("solution");
+        var array = document.getElementById("array");
+      var oddN = document.getElementById("odd");
+       var arifmeticM = document.getElementById("arithmetic_mean");
+      
+        var numbers = [1,2435,544,4545, 4, 6, 7 ,23];
+        var roots = numbers.map(function(x) {
+            return x * 2;
+        });
+        array.innerHTML = numbers;
+        sol.innerHTML = roots;
+        function odd(value) {
+        return value % 2 ;
+        }
+        var filtered = numbers.filter(odd);
+        oddN.innerHTML = filtered;
+        var result = numbers.reduce(function(sum, current) {
+        return sum + current;
+        }, 0);
+      arifmeticM.innerHTML = result/numbers.length ;
+
+  </script>
+</body>
+</html>

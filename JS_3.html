@@ -1,0 +1,31 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>found </title>
+</head>
+<body>
+ <p>String 1: <span id="str"></span></p>
+<p>String after filter: <span id="solution"></span></p>
+  <script>
+      var sol = document.getElementById("solution");
+    var str3 = document.getElementById("str");
+      var str2= "Назва Львів дана місту на честь князя Лева Даниловича, сина засновника Львова - Данила Галицького.";
+      var str= str2.toLowerCase();
+      var strf="";
+            str3.innerHTML = str2;
+    function search(str, lettersearch) {
+        for(var count=-1,index=-2; index != -1; count++,index=str.indexOf(lettersearch,index+1) );
+        return count;
+     } 
+    for(var i=0; i<str.length;i++ ){
+          if(search(str, str[i])>1){
+              strf+=str2[i];
+   
+          } 
+      }
+      sol.innerHTML = strf;
+  </script>
+</body>
+</html>
